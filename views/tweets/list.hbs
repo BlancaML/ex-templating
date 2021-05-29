@@ -1,0 +1,49 @@
+<div class="input-group">
+  <div class="form-outline">
+    <input type="search" id="form1" class="form-control" placeholder="search"/>
+  </div>
+  <button type="button" class="btn btn-primary">
+    <i class="fas fa-search fa-fw"></i>
+  </button>
+</div>
+​
+{{#each tweets as |tweet|}}
+    <div class="card-body">
+        <h5 class="card-title">{{tweet.user}}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{tweet.createdAt}}</h6>
+        <p class="card-text">{{tweet.message}}</p>
+  </div>
+{{/each}}
+<form action="/tweets" method="POST">
+<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Email address</label>
+  <input type="email" value="{{tweet.user}}" class="form-control" id="exampleFormControlInput1" name="tweeter-user" placeholder="name@example.com">
+</div>
+<div class="mb-3">
+  <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="tweeter-message" placeholder="Write your tweet">{{tweet.message}}</textarea>
+</div>
+<button type="submit" class="btn btn-primary">Create Note</button>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

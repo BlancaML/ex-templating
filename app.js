@@ -16,6 +16,11 @@ require('./config/hbs.config');
 // Iteration 5: configure body parser
 
 // Iteration 2: configure global template vars (res.locals.*)
+app.use((req, res, next) => {
+  // res.locals.path => global variables at hbs views (active path at navbar)
+  res.locals.path = req.path;
+  next();
+}); 
 
 // Configure router
 const router = require('./config/routes.config');
